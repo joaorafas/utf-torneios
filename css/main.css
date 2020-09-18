@@ -1,0 +1,22 @@
+html {
+    font-family: Roboto, sans-serif;
+}
+
+header>img {
+    width: 12%;
+    margin-top: 30px;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    margin-top: 45px;
+    word-spacing: 40px;
+}

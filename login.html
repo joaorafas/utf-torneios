@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTF Torneios</title>
+</head>
+
+
+<body>
+    <div id="page-signup">
+        <header>
+            <p>LOGIN</p>
+        </header>
+
+        <form method="post" action="successpage.html" onsubmit="return validation();">
+            <fieldset>
+
+                <div class="field">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" autofocus>
+
+                </div>
+
+
+                <div class="field">
+                    <label for="input_password">Senha</label>
+                    <input type="password" class="input" name="input-password">
+
+                </div>
+
+                <a onmouseover="mouseHome();">HOME</a>
+
+                <input type="submit" id="login_btn" class="btn disabled" value="LOGIN" disabled="true">
+    </div>
+    </form>
+    </div>
+    <script type="text/javascript" src="scripts/login.js"></script>
+
+</body>
+
+</html>

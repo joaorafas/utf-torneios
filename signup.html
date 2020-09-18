@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/signup.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTF Torneios</title>
+</head>
+
+
+<body>
+    <div id="page-signup">
+        <header>
+            <p>REGISTRAR-SE</p>
+        </header>
+
+        <form method="post">
+            <fieldset>
+                
+                <div class="field">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" autofocus required onblur="validarEmail()" onfocus="redefinirMsg()" />
+                    <span id="error-email"></span>
+                </div>
+
+                <div class="field">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="field">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" onblur="validarSenha()" required>
+                    <span id="error-password"></span>
+
+                </div>
+
+                <a onclick="backHome()">HOME</a>
+                <button type="submit" id="registrar" class="button-register">REGISTRAR</button>
+        </form>
+    </div>
+    <script type="text/javascript" src="scripts/signup.js"></script>
+
+</body>
+
+</html>
