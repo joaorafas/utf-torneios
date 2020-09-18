@@ -9,10 +9,10 @@
 
     setInterval(function () {
         document.getElementById("bg").style.background = 'linear-gradient(180deg, #fe8c00 0%,#f83600 100%)'
-    }, 1000);
+    }, 2000);
 
     setTimeout(function () {
         this.location.href = "index.html"; 
-    }, 5000); 
+    }, 6000); 
 
 })();
