@@ -1,4 +1,3 @@
-
 //set interval e timeout
 (function () {
 
