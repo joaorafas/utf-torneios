@@ -16,7 +16,8 @@ Este é um projeto para criação de torneios de games para a comunidade local d
 }
 
 
-consoleWarning = function(){
+// function anonima com argumento
+consoleWarning = function(event){
     console.log("Página em construção");
 }
 
