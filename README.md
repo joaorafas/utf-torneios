@@ -6,6 +6,7 @@ joaorafas.github.io/utf-torneios
 # Relatório :
 
 encurtador.com.br/GLQ16
+encurtador.com.br/ruLVY
 
 
 Caixas de Diálogo
