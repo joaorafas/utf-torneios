@@ -3,9 +3,11 @@
 # Github pages:
 joaorafas.github.io/utf-torneios
 
-# Relatório :
+# Relatório 1:
 
 encurtador.com.br/GLQ16
+
+# Relatório 2:
 encurtador.com.br/ruLVY
 
 
