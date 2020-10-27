@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Times - UTFTorneios</title>
+    <link rel="stylesheet" href="assets/libraries/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/resources/styles/teams.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libraries/bootstrap/fonts/fontawesome-all.min.css">
+
+</head>
+
+<body id="page-top">
+    <div class="col-md-12 search-table-col"><span class="counter pull-right"></span></div>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet'
+        type='text/css'>
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+                    href="index.html">
+                    <div class="sidebar-brand-text mx-3"><span>UTF Torneios</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="table.html">
+                            <class="fas fa-table><span>Tabela</span>
+                        </a>
+                        <a class="nav-link active" href="groups.html">
+                            <class="fas fa-table><span>Campeonatos</span>
+                        </a>
+                        <a class="nav-link active" href="login.html">
+                            <class="fas fa-table><span>Login</span>
+                        </a>
+                        <a class="nav-link active" href="sign-up.html">
+                            <class="fas fa-table><span>Registrar</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0"
+                        id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <!-- mensagem -->
+            <div class="row">
+                <div class="col s12">
+                    <br>
+                    <div class="card bg-success text-white my-hide-message" id="panel-message-time">
+                        <span class="black-text">Cadastrado com sucesso!!</span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- fim mensagem -->
+            <h3 class="text-dark mb-4">Times (<span id='span-time'></span> cadastros)</h3>
+            <div class="card shadow">
+                <div class="card-header py-3">
+                    <p class="text-primary m-0 font-weight-bold">Informações do time</p>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 text-nowrap">
+                            <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                                <label>Show&nbsp;<select
+                                        class="form-control form-control-sm custom-select custom-select-sm">
+                                        <option value="10" selected="">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select>&nbsp;</label></div>
+                        </div>
+                        <div class="col col-xs-6 text-right">
+                            <button type="button" class="btn btn-sm btn-primary btn-create" id="button-show">Mostrar
+                                times</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive table mt-2" id="dataTable" role="grid"
+                        aria-describedby="dataTable_info">
+                        <table class="table my-0" id="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Nome do time</th>
+                                    <th>Criador</th>
+                                    <th>E-mail</th>
+                                    <th>Jogo</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <form action="">
+                                            <div class="row">
+                                                <input id="input-name" type="text" class="validate" pattern="[a-z|A-Z\s]+$">
+                                            </div>
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <input id="input-creator" type="text" class="validate">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <input id="input-email" type="text" class="validate" required pattern="^(\w|\W)+@(\w+\.)+\w{3}(\.\w{2})?">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <input id="input-game" type="text" class="validate">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-primary" type="submit"
+                                            name="action"></em>Cadastrar</button>
+                                        <button class="btn btn-secondary" type="reset" name="action"
+                                            id="button-clean">Limpar</button>
+                                        <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
+                                        <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                                    </td>
+
+
+                                    <div id="container-report">
+
+                                    </div>
+
+                                </tr>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        </form>
+                    </div>
+ 
+                        <div class="col-md-6">
+                            <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                <ul class="pagination">
+                                    <li class="page-item disabled"><a class="page-link" href="#"
+                                            aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
+                                                aria-hidden="true">»</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-white sticky-footer">
+        <div class="container my-auto">
+            <div class="text-center my-auto copyright"><span>© UTF Torneios 2020</span></div>
+        </div>
+    </footer>
+    </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="assets/libraries/bootstrap/js/jquery.min.js"></script>
+    <script src="assets/libraries/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="assets/libraries/bootstrap/js/script.min.js"></script>
+    <script src="assets/resources/scripts/teams.js"></script>
+</body>
+
+</html>

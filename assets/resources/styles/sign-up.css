@@ -1,0 +1,115 @@
+#page-signup {
+    background: url('/assets/resources/images/signupbanner.png') no-repeat;
+    height: 100vh;
+    background-position: left;
+    margin-left: -20px;
+
+}
+
+#page-signup header p {
+    position: absolute;
+    left: 1080px;
+    top: 50px;
+    font-size: 35px;
+    line-height: 47px;
+}
+
+form {
+    position: absolute;
+    left: 950px;
+    top: 190px;
+    font-size: 15px;
+    line-height: 100px;
+    columns: 500px;
+    word-spacing: 20px;
+}
+
+fieldset {
+    border-width: 0px;
+    border: none;
+}
+
+form input {
+    background-color: #f0f0f5;
+    border: 0;
+    height: 50px;
+    width: 335px;
+    border-radius: 8px;
+    padding-left: 15px;
+
+}
+
+form input:invalid {
+    border-color: crimson;
+    box-shadow: 0px 0px 3px crimson;
+
+}
+
+form input:focus {
+    outline: none;
+}
+
+form input:focus:invalid {
+    box-shadow:none;
+}
+
+form span{
+    color: crimson;
+    word-spacing: 0px;
+}
+
+form h2 {
+    font-size: 20px;
+}
+
+form button {
+    width: 180px;
+    height: 60px;
+    background-color: #FBBD3C;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 400ms;
+    margin-left: 25px;
+    border-style: none;
+}
+
+form a {
+    background-color: #FBBD3C;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 20px 30px;
+    transition: 400ms;
+    margin-left: 70px;
+
+}
+
+form button:hover,
+a:hover {
+    background-color: #C6942C;
+
+}
+
+
+input[type=radio] {
+    
+    display: inline;
+    border: 0px;
+    width: 50px;
+    height: 20px;
+    margin-top: 50px;
+}
+
+form h2{
+    font-weight: inherit;
+    font-size: 16px;
+    position: absolute;
+    word-spacing: 0px;
+    margin:0;
+    padding:0px;
+    margin-top: -34px;
+    margin-left: 150px;
+}
