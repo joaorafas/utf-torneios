@@ -1,5 +1,5 @@
 #page-signup {
-    background: url('/assets/resources/images/signupbanner.png') no-repeat;
+    background: url('../images/signupbanner.png') no-repeat;
     height: 100vh;
     background-position: left;
     margin-left: -20px;
@@ -53,10 +53,13 @@ form input:focus:invalid {
     box-shadow:none;
 }
 
-form span{
+
+#error-email, #error-password{  
     color: crimson;
     word-spacing: 0px;
+
 }
+
 
 form h2 {
     font-size: 20px;
@@ -112,4 +115,9 @@ form h2{
     padding:0px;
     margin-top: -34px;
     margin-left: 150px;
+}
+
+#third-step button{
+    width: 25em;
+    margin-left: 2em;
 }

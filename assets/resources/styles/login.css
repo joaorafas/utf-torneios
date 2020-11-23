@@ -1,5 +1,5 @@
 #page-signup {
-    background: url('/assets/resources/images/signupbanner.png') no-repeat;
+    background: url('../images/signupbanner.png') no-repeat;
     height: 100vh;
     background-position: left;
     margin-left: -20px;

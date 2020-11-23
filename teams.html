@@ -33,8 +33,9 @@
                             <class="fas fa-table><span>Campeonatos</span>
                         </a>
                         <a class="nav-link active" href="login.html">
-                            <class="fas fa-table><span>Login</span>
+                            <class="fas fa-table><span id="userNameLogin">Login</span>
                         </a>
+                        
                         <a class="nav-link active" href="sign-up.html">
                             <class="fas fa-table><span>Registrar</span>
                         </a>
@@ -56,6 +57,11 @@
                 </div>
             </div>
             <br>
+          
+
+            
+
+
             <!-- fim mensagem -->
             <h3 class="text-dark mb-4">Times (<span id='span-time'></span> cadastros)</h3>
             <div class="card shadow">
@@ -77,6 +83,7 @@
                         <div class="col col-xs-6 text-right">
                             <button type="button" class="btn btn-sm btn-primary btn-create" id="button-show">Mostrar
                                 times</button>
+
                         </div>
                     </div>
                     <div class="table-responsive table mt-2" id="dataTable" role="grid"
@@ -94,7 +101,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <form action="">
+                                        <form action="" id="register">
                                             <div class="row">
                                                 <input id="input-name" type="text" class="validate" pattern="[a-z|A-Z\s]+$">
                                             </div>
@@ -114,15 +121,17 @@
                                             <input id="input-game" type="text" class="validate">
                                         </div>
                                     </td>
+                                    
                                     <td>
+                                        <div class="div-sucess">
                                         <button class="btn btn-primary" type="submit"
-                                            name="action"></em>Cadastrar</button>
+                                            name="action" id="btn-sucess">Cadastrar</button>
                                         <button class="btn btn-secondary" type="reset" name="action"
                                             id="button-clean">Limpar</button>
                                         <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                                        <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                                        <a class="btn btn-danger" onclick="deleteList();"><em class="fa fa-trash"></em></a>
                                     </td>
-
+                                </div>
 
                                     <div id="container-report">
 
@@ -136,19 +145,7 @@
                         </form>
                     </div>
  
-                        <div class="col-md-6">
-                            <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                <ul class="pagination">
-                                    <li class="page-item disabled"><a class="page-link" href="#"
-                                            aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
-                                                aria-hidden="true">»</span></a></li>
-                                </ul>
-                            </nav>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -161,11 +158,13 @@
     </footer>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
+    <script src="assets/libraries/jquery/jquery-3.5.1.min.js"></script>
     <script src="assets/libraries/bootstrap/js/jquery.min.js"></script>
+    <script src="assets/resources/scripts/data-access.js"></script>
     <script src="assets/libraries/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/libraries/bootstrap/js/script.min.js"></script>
     <script src="assets/resources/scripts/teams.js"></script>
+
 </body>
 
 </html>

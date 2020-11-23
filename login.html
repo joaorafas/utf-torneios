@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="assets/resources/styles/main.css">
-    <link rel="stylesheet" type="text/css" href="assets/resources/styles/login.css">
-    <link rel="stylesheet" type="text/css" href="assets/resources/styles/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/resources/styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="assets/resources/styles/login.css" />
+    <link rel="stylesheet" type="text/css" href="assets/resources/styles/responsive.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UTF Torneios</title>
 </head>
@@ -15,10 +15,10 @@
 <body>
     <div id="page-signup">
         <header>
-            <p>LOGIN</p>
+            <p id="strong">LOGIN</p>
         </header>
 
-        <form method="post" action="success-page.html" onsubmit="return validation();">
+        <form method="post" onsubmit="return validation()">
             <fieldset>
 
                 <div class="field">
@@ -30,17 +30,21 @@
 
                 <div class="field">
                     <label for="input_password">Senha</label>
-                    <input type="password" class="input" name="input-password">
+                    <input type="password" class="input" name="input-password" id="password"
+                        oninput="verifyPassword(this)">
 
                 </div>
 
                 <a onmouseover="mouseHome();">HOME</a>
 
                 <input type="submit" id="login_btn" class="btn disabled" value="LOGIN" disabled="true">
+
     </div>
     </form>
     </div>
     <script type="text/javascript" src="assets/resources/scripts/login.js"></script>
+    <script type="text/javascript" src="assets/resources/scripts/data-access.js"></script>
+    <script src="assets/libraries/jquery/jquery-3.5.1.min.js"></script>
 
 </body>
 

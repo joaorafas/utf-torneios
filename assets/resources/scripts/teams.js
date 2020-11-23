@@ -1,4 +1,3 @@
-
 /**
  * Retorna o elemento pelo id
  * Correção de erro 1 com o use strict 
@@ -17,7 +16,7 @@ let $all = function (selector) {
 /**
     Funções construtoras
 */
-let Time = function (id, name, creator, email, game) {
+let Time = function (id, name, creator, email, game, category) {
     this.id = id;
     this.name = name;
     this.creator = creator;
@@ -39,6 +38,10 @@ let Time = function (id, name, creator, email, game) {
     this.getGame = function () {
         return this.game;
     };
+
+    this.getCategory = function () {
+        return this.category;
+    };
 };
 
 $id("input-email").onblur = function () {
@@ -52,86 +55,96 @@ $id("input-email").onfocus = function () {
 }
 
 
-$id('input-game').onblur = function(){
+$id('input-game').onblur = function () {
     let content = $id('input-game').value;
     $id('input-game').value = content.toUpperCase();
-  };
+};
 
-window.onload = function () {
 
-    let times = [];
-    let timeId = 0;
+/* window.onload = function () {
+
+    document.querySelector('#strong').innerHTML = `<strong> ${localStorage.getItem('details')} </strong>`
+;
+} */
+
+
+let times = [];
+let timeId = restore('timeId');
+$id('span-time').innerHTML = timeId;
+document.forms[0].onsubmit = function (e) {
+    //evita que o formulário seja submetido e a página atualizada
+    e.preventDefault();
+
+    let name = $id('input-name').value;
+    let creator = $id('input-creator').value;
+    let email = $id('input-email').value;
+    let game = $id('input-game').value;
+
+    let time = new Time(++timeId, name, creator, email, game);
+    save('timeId', timeId);
+    saveLoan(time);
+    times.push(time);
+    restoreJson(timeId);
+    console.log(name);
+
+    //Mostra a mensagem de sucesso // 
+
+    $id('panel-message-time').classList.remove('my-hide-message');
+    $id('panel-message-time').classList.add('my-show-message');
+
     $id('span-time').innerHTML = timeId;
-    document.forms[0].onsubmit = function (e) {
-        //evita que o formulário seja submetido e a página atualizada
-        e.preventDefault();
-        let name = $id('input-name').value;
-        let creator = $id('input-creator').value;
-        let email = $id('input-email').value;
-        let game = $id('input-game').value;
 
-        let time = new Time(++timeId, name, creator, email, game);
-        times.push(time);
+    //Seletor $(pai > filho)
+    $('.div-sucess > #btn-sucess').css('background', '#28a745');
 
-         //Mostra a mensagem de sucesso // 
+};
 
-        $id('panel-message-time').classList.remove('my-hide-message');
-        $id('panel-message-time').classList.add('my-show-message');
-
-
-
-        $id('span-time').innerHTML = timeId;
-    }; 
-
-
-    /***
-     * 
-     * Esconde todas as mensagens de sucesso ao clicar em limpar 
-     * Pega todos os elementos com tal classe  
-     * Correção erro 2, i não estava definido no for e foi colocado o let
-     * Correção 3, existia uma função clean aqui inutilizada e foi apagada
-     */
-    let msgs = $all('.my-show-message');
-    for (let i in msgs) {
-        if (msgs[i].classList) {
-            //Adiciona e remove classes no elemento
-            msgs[i].classList.add('my-hide-message');
-            msgs[i].classList.remove('my-show-message');
-        }
-        
+// Seletor $(anterior + proximo)
+$id('button-clean').onclick = function () {
+    $('#btn-sucess + button').css('background', '#28a745');
 }
 
 
-    /**
-     * Relatório 
-     * Correção erro 4, faltando ponto e vírgula depois do container report
-     */
-    let containerReport = $id('container-report');
-    $id('button-show').onclick = function () {
-        containerReport.innerHTML = '';
-        //reseta o container
-        //correção erro 5, i não estava definido no for e foi colocado o let
-        for (let i in times) {
-            let time = times[i];
+let usernameFromJSON;
+function getUsernameFromJSON(){
+    let userCreated = JSON.parse(localStorage.getItem('userId'));
+    usernameFromJSON = userCreated.email;
+    console.log(usernameFromJSON);
+    return usernameFromJSON;
+}
 
-            let tr = document.createElement('tr');
-            tr.appendChild(document.createTextNode('Time ' + time.id));
-            let td = document.createElement('td');
-            let td2 = document.createElement('td');
-            let td3 = document.createElement('td');
-            let td4 = document.createElement('td');
 
-            td.appendChild(document.createTextNode(time.getName()));
-            td2.appendChild(document.createTextNode(time.getCreator()));
-            td3.appendChild(document.createTextNode(time.getEmail()));
-            td4.appendChild(document.createTextNode(time.getGame()));
-            containerReport.appendChild(tr);
-            containerReport.appendChild(td);
-            containerReport.appendChild(td2);
-            containerReport.appendChild(td3);
-            containerReport.appendChild(td4);
-        }
-    };
+/**
+ * Relatório 
+ * Correção erro 4, faltando ponto e vírgula depois do container report
+ */
+let containerReport = $id('container-report');
+$id('button-show').onclick = function () {
+    containerReport.innerHTML = '';
+    //reseta o container
+    //correção erro 5, i não estava definido no for e foi colocado o let
+    for (let i in times) {
+        let time = times[i];
 
+        let tr = document.createElement('tr');
+        tr.appendChild(document.createTextNode('Time ' + time.id));
+        let td = document.createElement('td');
+        let td2 = document.createElement('td');
+        let td3 = document.createElement('td');
+        let td4 = document.createElement('td');
+
+
+        td.appendChild(document.createTextNode(time.getName()));
+        td2.appendChild(document.createTextNode(time.getCreator()));
+        td3.appendChild(document.createTextNode(time.getEmail()));
+        td4.appendChild(document.createTextNode(time.getGame()));
+
+        containerReport.appendChild(tr);
+        containerReport.appendChild(td);
+        containerReport.appendChild(td2);
+        containerReport.appendChild(td3);
+        containerReport.appendChild(td4);
+    }
 };
+
 
