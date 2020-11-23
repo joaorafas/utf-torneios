@@ -14,7 +14,7 @@ let $id = function (id) {
 // Redirecionar após login
 
 let redirect = function(){
-    document.location.href="teams.html"
+    document.location.href="success-page.html";
  } 
 
 //Movimento do mouse
@@ -71,7 +71,7 @@ document.forms[0].onsubmit = function (e) {
     let email = $id('email').value;
     let password = $id('password').value;
     let matchEmail = JSON.parse(localStorage.getItem("details"));
-    let userId = restoreLoans('userId');
+    let userId = restore('userId');
 
 
     let users = new User(userId++, name, email, password);
@@ -88,7 +88,7 @@ document.forms[0].onsubmit = function (e) {
        // console.log(emailArray);
         if(emailArray.indexOf(email) > -1 && passArray.indexOf(password) > -1){
             console.log("Login realizado com sucesso");
-            document.location.href="teams.html";
+            document.location.href="success-page.html";
         }else{
             console.log("Você não tem registro no site");
         }

@@ -82,7 +82,7 @@ document.forms[0].onsubmit = function (e) {
 
     let time = new Time(++timeId, name, creator, email, game);
     save('timeId', timeId);
-    saveLoan(time);
+    save(time);
     times.push(time);
     restoreJson(timeId);
     console.log(name);

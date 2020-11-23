@@ -109,7 +109,7 @@ document.forms[0].onsubmit = function (e) {
 
     let grupo = new Grupo(++grupoId, name, selectTeam, email, game);
     save('grupoId', grupoId);
-    saveLoan(grupo);
+    saveC(grupo);
     grupos.push(grupo);
     restoreJson(grupoId);
     console.log(name);

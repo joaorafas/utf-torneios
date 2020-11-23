@@ -12,7 +12,7 @@
     }, 2000);
 
     setTimeout(function () {
-        this.location.href = "index.html"; 
-    }, 6000); 
+        this.location.href = "teams.html"; 
+    }, 3000); 
 
 })();
